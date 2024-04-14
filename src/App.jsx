@@ -8,7 +8,7 @@ function App() {
 
   return (
     <>
-    <image>http</image>
+   <h3>hello world</h3>
     
     </>
   )
