@@ -1,18 +1,50 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { BrowserRouter,Route,Routes } from "react-router-dom";
+import Cart from "./component/Cart";
+import Home from "./component/Home";
+import Header from "./component/Header";
+import { Cartingsystem } from "./context/Mycontext";
+import { Myuser } from "./context/User";
+import Footer from "./component/Footer";
+import Signup from "./component/Signup";
+import Userdetail from "./component/Userdetail";
+import ViewProduct from "./component/ViewProduct";
+import Login from "./component/Login";
+import Contact from "./component/Contact";
+import Itemlist from "./component/Itemlist";
+import Purchase from "./component/Purchase";
+import Push from "./component/Push";
+import About from "./component/About";
 
-function App() {
-  const [count, setCount] = useState(0)
+import Booked from "./component/Booked";
 
-  return (
-    <>
-     <h1>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto nulla ipsum hic quo eligendi illum qui pariatur, libero quam blanditiis. Vero consequuntur voluptates voluptas reprehenderit minus recusandae earum nihil. Cum consequatur voluptatum totam sit ut quae, voluptatibus voluptates hic perspiciatis placeat, aperiam officia quia animi eum quam laboriosam tempore rem. Aperiam adipisci similique vero, possimus earum sunt eum libero, voluptatibus nemo consectetur maiores dicta, fugit nulla numquam cupiditate modi repudiandae assumenda corporis quod eaque aut velit ducimus eius. Temporibus ea numquam iure, quaerat exercitationem minima qui sunt ipsum adipisci nisi porro odio dignissimos quibusdam neque cum omnis quis? Atque, delectus.
-     </h1>
-    
+
+
+const App = () => {
+  return (<>
+  <Cartingsystem>
+    <Header/>
+    <BrowserRouter>
+        <Routes>
+        <Route path="/log" element={<Login />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/sign" element={<Signup/>}></Route>
+        <Route path="/Itemlist" element={<Itemlist/>}></Route>
+        <Route path="/viewproduct" element={<ViewProduct />} />
+        <Route path="/user" element={<Userdetail />} />
+        <Route path="/contact" element={<Contact/>}></Route>
+        <Route path="/purchase" element={<Purchase/>}></Route>
+        <Route path="/push" element={<Push/>}></Route>
+        <Route path="/booking" element={<Booked/>}></Route>
+        <Route path="/about" element={<About/>}></Route>
+        
+        </Routes>
+    </BrowserRouter>
+     {/* <Footer/> */}
+    </Cartingsystem>
+ 
     </>
-  )
-}
+  );
+};
 
-export default App
+export default App;
